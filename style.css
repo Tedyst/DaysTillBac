@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'MainFont';
+    src: url('./Musicality-lgdDZ.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'MainFont';
+}
+
+#body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1d;
+}
+
+#title{
+    color: #c3073f;
+    font-size: 200px;
+}
+
+#days, #hours, #minutes, #seconds {
+    color: #c3073f;
+    font-size: 100px;
+}

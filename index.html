@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DaysTillBAC</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="icon" href="./favicon.png">
+    </head>
+    <body id="body">
+        <h1 id="title">Days Till BAC</h1>
+        <h2 id="days"></h2>
+        <h2 id="hours"></h2>
+        <h2 id="minutes"></h2>
+        <h2 id="seconds"></h2>
+    </body>
+</html>
+    
+<script>
+    let days = document.getElementById('days');
+    let hours = document.getElementById('hours');
+    let minutes = document.getElementById('minutes');
+    let seconds = document.getElementById('seconds');
+    const BAC = new Date("June 28, 2021 0:0:0").getTime();
+
+    function updateTimer() {
+        let currentTime = new Date().getTime();
+        let secondsLeft = Math.floor((BAC - currentTime) / 1000);   seconds.textContent = secondsLeft + " seconds";
+        let minutesLeft = Math.floor(secondsLeft / 60); minutes.textContent = minutesLeft + " minutes";
+        let hoursLeft = Math.floor(minutesLeft / 60);   hours.textContent = hoursLeft + " hours";
+        let daysLeft = Math.floor(hoursLeft / 24);  days.textContent = daysLeft + " days";
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
